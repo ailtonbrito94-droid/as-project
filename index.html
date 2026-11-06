@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AS Project | Manutenções e Projetos Elétricos</title>
+  <meta name="description" content="Consultoria e projetos elétricos em média e baixa tensão: laudo de SPDA, análise de energia e estratificação de solo. Solicite seu orçamento.">
+  <link rel="icon" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ========== 1. CORES E FONTES (mude aqui e o site inteiro muda) ========== */
+    :root {
+      --grafite: #353535;
+      --vermelho: #cc0001;
+      --vermelho-escuro: #a80001;
+      --fundo: #eeeeec;
+      --branco: #ffffff;
+      --texto: #2b2b2b;
+      --linha: #d3d3cf;
+      --titulo: "Montserrat", "Segoe UI", Arial, sans-serif;
+      --corpo: "Source Sans 3", "Segoe UI", Arial, sans-serif;
+    }
+
+    /* ========== 2. BASE ========== */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--corpo); font-size: 1.1rem; line-height: 1.6; color: var(--texto); background: var(--branco); }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    h1, h2, h3 { font-family: var(--titulo); color: var(--grafite); line-height: 1.15; }
+    .container { width: min(1100px, 100% - 2.5rem); margin-inline: auto; }
+    :focus-visible { outline: 3px solid var(--vermelho); outline-offset: 3px; }
+
+    .btn { display: inline-block; font-family: var(--titulo); font-weight: 600; font-size: 1rem; text-decoration: none; padding: .85rem 1.6rem; border: 2px solid var(--vermelho); background: var(--vermelho); color: var(--branco); cursor: pointer; transition: background .2s, border-color .2s; }
+    .btn:hover { background: var(--vermelho-escuro); border-color: var(--vermelho-escuro); }
+    .btn-contorno { background: transparent; color: var(--grafite); border-color: var(--grafite); }
+    .btn-contorno:hover { background: var(--grafite); border-color: var(--grafite); color: var(--branco); }
+
+    /* ========== 3. TOPO ========== */
+    .topo { background: var(--fundo); border-bottom: 1px solid var(--linha); }
+    .topo .container { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: .6rem; }
+    .topo img { height: 64px; width: auto; }
+    .topo nav { display: flex; align-items: center; gap: 1.6rem; }
+    .topo nav a:not(.btn) { text-decoration: none; font-weight: 600; }
+    .topo nav a:not(.btn):hover { color: var(--vermelho); }
+
+    /* ========== 4. APRESENTAÇÃO (HERO) ========== */
+    .hero { background: var(--fundo); padding-block: clamp(2.5rem, 7vw, 5rem); }
+    .hero .container { display: grid; grid-template-columns: 1.3fr 1fr; gap: 3rem; align-items: center; }
+    .hero h1 { font-weight: 800; font-size: clamp(2.2rem, 5vw, 3.5rem); }
+    .hero p { margin-top: 1.2rem; max-width: 34em; }
+    .hero .acoes { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: .8rem; }
+    .hero svg { width: 100%; height: auto; }
+
+    .faixa { background: var(--grafite); color: var(--branco); border-left: 8px solid var(--vermelho); padding-block: 1.4rem; font-family: var(--titulo); font-weight: 600; font-size: clamp(1rem, 2.2vw, 1.25rem); }
+
+    /* ========== 5. SERVIÇOS ========== */
+    section { padding-block: clamp(3rem, 7vw, 5rem); }
+    section > .container > h2 { font-size: clamp(1.7rem, 3.5vw, 2.3rem); margin-bottom: 2rem; }
+    .servicos { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.5rem 3rem; }
+    .servico { border-top: 4px solid var(--grafite); padding-top: 1rem; }
+    .servico:first-child { border-top-color: var(--vermelho); }
+    .servico h3 { font-size: 1.25rem; margin-bottom: .5rem; }
+
+    /* ========== 6. COMO FUNCIONA (é uma sequência, então usa números) ========== */
+    .passos-bloco { background: var(--fundo); }
+    .passos { list-style: none; counter-reset: passo; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+    .passos li { counter-increment: passo; border-top: 2px solid var(--linha); padding-top: 1rem; }
+    .passos li::before { content: counter(passo); display: block; font-family: var(--titulo); font-weight: 800; font-size: 2.2rem; color: var(--vermelho); line-height: 1; margin-bottom: .6rem; }
+    .passos strong { display: block; font-family: var(--titulo); color: var(--grafite); margin-bottom: .3rem; }
+
+    /* ========== 7. CONTATO ========== */
+    .contato .container { display: grid; grid-template-columns: 1fr 1.2fr; gap: 3rem; align-items: start; }
+    .contato h2 { margin-bottom: 1rem; }
+    .contato .container > div > p { margin-bottom: 1.5rem; }
+    form { display: grid; gap: 1rem; }
+    label { display: grid; gap: .3rem; font-weight: 600; }
+    input, select, textarea { font: inherit; font-weight: 400; padding: .7rem .8rem; border: 2px solid var(--linha); background: var(--branco); color: var(--texto); width: 100%; }
+    input:focus, select:focus, textarea:focus { border-color: var(--grafite); outline: none; }
+    textarea { min-height: 110px; resize: vertical; }
+
+    /* ========== 8. RODAPÉ ========== */
+    footer { background: var(--grafite); color: #d9d9d6; padding-block: 2rem; font-size: .95rem; }
+    footer .container { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; }
+
+    /* ========== 9. CELULAR ========== */
+    @media (max-width: 800px) {
+      .hero .container, .contato .container { grid-template-columns: 1fr; }
+      .hero svg { max-width: 300px; }
+      .servicos { grid-template-columns: 1fr; }
+      .passos { grid-template-columns: 1fr 1fr; }
+      .topo nav a:not(.btn) { display: none; }
+    }
+    @media (max-width: 480px) { .passos { grid-template-columns: 1fr; } }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn { transition: none; } }
+  </style>
+</head>
+
+<body>
+
+  <!-- TOPO -->
+  <header class="topo">
+    <div class="container">
+      <a href="#inicio"><img src="logo.png" alt="AS Project – Manutenções e Projetos Elétricos"></a>
+      <nav>
+        <a href="#servicos">Serviços</a>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#contato" class="btn">Orçamento</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inicio">
+
+    <!-- APRESENTAÇÃO -->
+    <div class="hero">
+      <div class="container">
+        <div>
+          <h1>Manutenções e projetos elétricos</h1>
+          <p>Consultoria e projetos em média e baixa tensão, com laudo de SPDA, análise de energia e estratificação de solo.</p>
+          <div class="acoes">
+            <a href="#contato" class="btn">Solicitar orçamento</a>
+            <a href="#servicos" class="btn btn-contorno">Ver serviços</a>
+          </div>
+        </div>
+
+        <!-- Desenho simples: descarga atmosférica, haste de captação e hastes de aterramento nas camadas do solo -->
+        <svg viewBox="0 0 320 300" role="img" aria-label="Desenho de um para-raios com hastes de aterramento em camadas de solo">
+          <polygon points="236,10 208,66 228,66 212,108 262,48 238,48 254,10" fill="#cc0001"/>
+          <rect x="0" y="170" width="320" height="40" fill="#dcdcd8"/>
+          <rect x="0" y="210" width="320" height="45" fill="#c9c9c4"/>
+          <rect x="0" y="255" width="320" height="45" fill="#b6b6b0"/>
+          <line x1="0" y1="170" x2="320" y2="170" stroke="#353535" stroke-width="4"/>
+          <line x1="100" y1="70" x2="100" y2="170" stroke="#353535" stroke-width="6"/>
+          <circle cx="100" cy="66" r="9" fill="#353535"/>
+          <line x1="60" y1="170" x2="60" y2="285" stroke="#cc0001" stroke-width="6"/>
+          <line x1="140" y1="170" x2="140" y2="285" stroke="#cc0001" stroke-width="6"/>
+          <line x1="200" y1="170" x2="200" y2="285" stroke="#cc0001" stroke-width="6"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="faixa">
+      <div class="container">Qualidade e profissionalismo no desenvolvimento de soluções em Engenharia Elétrica.</div>
+    </div>
+
+    <!-- SERVIÇOS -->
+    <section id="servicos">
+      <div class="container">
+        <h2>Serviços</h2>
+        <div class="servicos">
+          <article class="servico">
+            <h3>Laudo de SPDA</h3>
+            <p>Inspeção do sistema de proteção contra descargas atmosféricas (para-raios) e emissão do laudo técnico da instalação.</p>
+          </article>
+          <article class="servico">
+            <h3>Análise de energia</h3>
+            <p>Avaliação do consumo e das condições da instalação elétrica, para encontrar desperdícios e riscos.</p>
+          </article>
+          <article class="servico">
+            <h3>Estratificação de solo</h3>
+            <p>Medição da resistividade do solo em camadas, usada para dimensionar o aterramento com segurança.</p>
+          </article>
+          <article class="servico">
+            <h3>Projetos de média e baixa tensão</h3>
+            <p>Projeto elétrico completo, do dimensionamento ao detalhamento, e manutenção das instalações.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMO FUNCIONA -->
+    <section id="como-funciona" class="passos-bloco">
+      <div class="container">
+        <h2>Como funciona</h2>
+        <ol class="passos">
+          <li><strong>Contato</strong>Você descreve o que precisa pelo WhatsApp ou pelo formulário.</li>
+          <li><strong>Levantamento</strong>Avaliamos o local e as informações da instalação.</li>
+          <li><strong>Projeto ou laudo</strong>Desenvolvemos o serviço contratado com responsabilidade técnica.</li>
+          <li><strong>Entrega</strong>Você recebe a documentação e tira suas dúvidas com a equipe.</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- AQUI ENTRA A SEÇÃO "CONFIANÇA" (registro no CREA, projetos feitos, clientes). Adicione quando tiver os dados reais. -->
+
+    <!-- CONTATO -->
+    <section id="contato" class="contato">
+      <div class="container">
+        <div>
+          <h2>Solicite seu orçamento</h2>
+          <p>Conte o que você precisa e a AS Project responde pelo WhatsApp.</p>
+          <a href="#" class="btn" data-wa>Chamar no WhatsApp</a>
+        </div>
+
+        <form id="form-orcamento">
+          <label>Nome
+            <input type="text" name="nome" autocomplete="name" required>
+          </label>
+          <label>Telefone
+            <input type="tel" name="telefone" autocomplete="tel" required>
+          </label>
+          <label>Serviço
+            <select name="servico" required>
+              <option value="">Escolha um serviço</option>
+              <option>Laudo de SPDA</option>
+              <option>Análise de energia</option>
+              <option>Estratificação de solo</option>
+              <option>Projeto de média ou baixa tensão</option>
+              <option>Manutenção elétrica</option>
+              <option>Outro</option>
+            </select>
+          </label>
+          <label>Mensagem (opcional)
+            <textarea name="mensagem"></textarea>
+          </label>
+          <button type="submit" class="btn">Enviar pelo WhatsApp</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer>
+    <div class="container">
+      <span>© 2026 AS Project – Manutenções e Projetos Elétricos</span>
+      <!-- Adicione aqui: cidade/região de atendimento, e-mail e redes sociais -->
+    </div>
+  </footer>
+
+  <script>
+    // ========== TROQUE AQUI: 55 + DDD + número, só dígitos (ex.: 5511999998888) ==========
+    const NUMERO_WHATSAPP = "5500000000000";
+
+    const linkWhatsApp = (texto) =>
+      "https://wa.me/" + NUMERO_WHATSAPP + "?text=" + encodeURIComponent(texto);
+
+    // Botões "Chamar no WhatsApp"
+    document.querySelectorAll("[data-wa]").forEach((a) => {
+      a.href = linkWhatsApp("Olá! Vim pelo site da AS Project e gostaria de um orçamento.");
+      a.target = "_blank";
+      a.rel = "noopener";
+    });
+
+    // Formulário: monta a mensagem e abre o WhatsApp
+    document.getElementById("form-orcamento").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const f = new FormData(e.target);
+      let msg = "Olá! Vim pelo site da AS Project.\n" +
+                "Nome: " + f.get("nome") + "\n" +
+                "Telefone: " + f.get("telefone") + "\n" +
+                "Serviço: " + f.get("servico");
+      if (f.get("mensagem")) msg += "\nMensagem: " + f.get("mensagem");
+      window.open(linkWhatsApp(msg), "_blank", "noopener");
+    });
+  </script>
+</body>
+</html>
