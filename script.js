@@ -5,9 +5,9 @@
 const EMPRESA = {
   whatsapp: "5511984939921",   // 55 + DDD + número, só dígitos
   mensagem: "Olá! Vim pelo site da AS Project e gostaria de um orçamento.\n\nServiço: \nCidade: ",
-  cidade: "",                  // ex: "São Paulo e região"
-  email: "",                   // ex: "contato@asproject.com.br"
-  instagram: "",               // só o usuário, sem @. ex: "asproject"
+  cidade: "São Paulo - SP",                  // ex: "São Paulo e região"
+  email: "alanbrito@asprojetsm.com",                   // ex: "contato@asproject.com.br"
+  instagram: "https://www.instagram.com/alandbbrito?mdxt=cGRsYXQzb2s3eWdz",               // só o usuário, sem @. ex: "asproject"
   crea: ""                     // ex: "CREA-SP 0000000000"
 };
 
