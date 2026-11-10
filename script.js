@@ -3,12 +3,12 @@
    Mude o que está entre aspas. Campo vazio ("") não aparece no site.
    ========================================================= */
 const EMPRESA = {
-  whatsapp: "5511984939921",   // 55 + DDD + número, só dígitos
+  whatsapp: "5511984939921",
   mensagem: "Olá! Vim pelo site da AS Project e gostaria de um orçamento.\n\nServiço: \nCidade: ",
-  cidade: "São Paulo - SP",                  // ex: "São Paulo e região"
-  email: "alanbrito@asprojetsm.com",                   // ex: "contato@asproject.com.br"
-  instagram: "https://www.instagram.com/alandbbrito?mdxt=cGRsYXQzb2s3eWdz",               // só o usuário, sem @. ex: "asproject"
-  crea: ""                     // ex: "CREA-SP 0000000000"
+  cidade: "São Paulo - SP",
+  email: "alanbrito@asprojetsm.com",
+  instagram: "alandbbrito",
+  crea: ""
 };
 
 /* =========================================================
