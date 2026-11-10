@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AS Project | Manutenções e Projetos Elétricos</title>
+  <meta name="description" content="AS Project: consultoria e projetos de engenharia elétrica em média e baixa tensão. SPDA, análise de energia, estruturação de solo e manutenção elétrica.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ CABEÇALHO ============ -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="#inicio" class="logo" aria-label="AS Project, início">
+        <img src="logo.png" alt="AS Project"
+             onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo__text',textContent:'AS Project'}))">
+      </a>
+
+      <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav" id="menu">
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#processo">Como trabalhamos</a>
+        <a href="#contato" class="btn btn--small">Fale conosco</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ INÍCIO ============ -->
+    <section class="hero" id="inicio">
+      <div class="container hero__content">
+        <p class="hero__eyebrow">AS Project</p>
+        <h1>Manutenções e projetos elétricos</h1>
+        <p class="hero__subtitle">
+          Qualidade e profissionalismo no desenvolvimento de soluções em engenharia elétrica.
+          Consultoria e projetos em média e baixa tensão.
+        </p>
+        <div class="hero__actions">
+          <a href="#contato" class="btn btn--white" data-whatsapp target="_blank" rel="noopener">Solicitar orçamento</a>
+          <a href="#servicos" class="btn btn--ghost">Ver serviços</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SOBRE ============ -->
+    <section class="section" id="sobre">
+      <div class="container sobre">
+        <div>
+          <p class="section__label">Sobre</p>
+          <h2 class="section__title">Engenharia elétrica feita com critério</h2>
+          <p class="section__text">
+            A AS Project atua com consultoria e projetos de engenharia elétrica em média e baixa tensão.
+            Entregamos soluções seguras, dentro das normas técnicas e com atendimento próximo ao cliente,
+            do primeiro contato à entrega.
+          </p>
+        </div>
+        <ul class="destaques">
+          <li><strong>Média e baixa tensão</strong><span>Projetos e manutenção para os dois níveis.</span></li>
+          <li><strong>Normas técnicas</strong><span>Serviço documentado e dentro da norma.</span></li>
+          <li><strong>Atendimento direto</strong><span>Você fala com quem executa o serviço.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ SERVIÇOS ============ -->
+    <section class="section section--gray" id="servicos">
+      <div class="container">
+        <p class="section__label">Serviços</p>
+        <h2 class="section__title">O que fazemos</h2>
+
+        <div class="cards">
+          <article class="card">
+            <div class="card__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg>
+            </div>
+            <h3>SPDA</h3>
+            <p>Projeto, instalação e laudo de Sistema de Proteção contra Descargas Atmosféricas (para-raios).</p>
+          </article>
+
+          <article class="card">
+            <div class="card__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20h20M5 20V11M11 20V4M17 20v-7"/></svg>
+            </div>
+            <h3>Análise de energia</h3>
+            <p>Medição e análise da qualidade de energia para identificar perdas, falhas e oportunidades de economia.</p>
+          </article>
+
+          <article class="card">
+            <div class="card__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5 9-5zM3 12.5l9 5 9-5M3 17l9 5 9-5"/></svg>
+            </div>
+            <h3>Estruturação de solo</h3>
+            <p>Estudo e estratificação do solo para o dimensionamento correto de malhas de aterramento.</p>
+          </article>
+
+          <article class="card">
+            <div class="card__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            </div>
+            <h3>Manutenção elétrica</h3>
+            <p>Manutenção preventiva e corretiva em instalações de média e baixa tensão.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ COMO TRABALHAMOS ============ -->
+    <section class="section" id="processo">
+      <div class="container">
+        <p class="section__label">Como trabalhamos</p>
+        <h2 class="section__title">Do contato à entrega</h2>
+
+        <ol class="passos">
+          <li><h3>Contato</h3><p>Você explica a necessidade pelo WhatsApp.</p></li>
+          <li><h3>Levantamento</h3><p>Avaliamos o local e as condições da instalação.</p></li>
+          <li><h3>Proposta</h3><p>Enviamos escopo, prazo e orçamento por escrito.</p></li>
+          <li><h3>Execução</h3><p>Realizamos o serviço e entregamos a documentação.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ CONTATO ============ -->
+    <section class="section section--red" id="contato">
+      <div class="container contato">
+        <h2>Precisa de um orçamento?</h2>
+        <p>Fale direto com a gente pelo WhatsApp. Sem compromisso.</p>
+        <a class="btn btn--white" href="#contato" data-whatsapp target="_blank" rel="noopener">Chamar no WhatsApp</a>
+
+        <!-- Estes itens são preenchidos pelo script.js. Campo vazio = item escondido. -->
+        <ul class="contato__info">
+          <li data-campo="cidade" hidden></li>
+          <li data-campo="email" hidden></li>
+          <li data-campo="instagram" hidden></li>
+          <li data-campo="crea" hidden></li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ RODAPÉ ============ -->
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="ano"></span> AS Project · Manutenções e Projetos Elétricos</p>
+    </div>
+  </footer>
+
+  <!-- ============ WHATSAPP FLUTUANTE ============ -->
+  <a class="whatsapp-float" href="#contato" data-whatsapp target="_blank" rel="noopener" aria-label="Chamar no WhatsApp">
+    <svg viewBox="0 0 32 32" width="30" height="30" fill="#fff" aria-hidden="true"><path d="M16 3C9 3 3.3 8.7 3.3 15.7c0 2.4.7 4.7 1.9 6.7L3 29l6.8-2.1c1.9 1 4 1.6 6.2 1.6 7 0 12.7-5.7 12.7-12.7S23 3 16 3zm0 23.2c-2 0-3.9-.6-5.6-1.6l-.4-.2-4 1.2 1.3-3.9-.3-.4c-1.1-1.7-1.7-3.7-1.7-5.7C5.3 9.9 10.1 5.2 16 5.2s10.7 4.8 10.7 10.6S21.9 26.2 16 26.2zm5.9-8c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.8 5 .8.4 1.4.6 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
