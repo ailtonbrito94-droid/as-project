@@ -4,7 +4,7 @@
    ========================================================= */
 const EMPRESA = {
   whatsapp: "5511984939921",
-  mensagem: "Olá! Vim pelo site da AS Project e gostaria de um orçamento.\n\nServiço: \nCidade: ",
+  mensagem: "Olá! Vim pelo site da AS Projetos e gostaria de um orçamento.\n\nServiço: \nCidade: ",
   cidade: "São Paulo - SP",
   email: "alanbrito@asprojetsm.com",
   instagram: "alandbbrito",
