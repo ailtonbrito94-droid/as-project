@@ -58,3 +58,34 @@ menu.querySelectorAll("a").forEach(function (link) {
 });
 
 document.getElementById("ano").textContent = new Date().getFullYear();
+
+// ============ SOBRE A EMPRESA (JANELA) ============
+const modalSobre = document.getElementById("modalSobre");
+const abrirSobre = document.getElementById("abrirSobre");
+const fecharSobre = document.getElementById("fecharSobre");
+
+function abrirModal(e) {
+  if (e) e.preventDefault();
+  modalSobre.classList.add("aberto");
+  modalSobre.setAttribute("aria-hidden", "false");
+  document.body.classList.add("modal-aberto");
+}
+
+function fecharModal() {
+  modalSobre.classList.remove("aberto");
+  modalSobre.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("modal-aberto");
+}
+
+abrirSobre.addEventListener("click", abrirModal);
+fecharSobre.addEventListener("click", fecharModal);
+
+// Fecha clicando fora da caixa branca
+modalSobre.addEventListener("click", (e) => {
+  if (e.target === modalSobre) fecharModal();
+});
+
+// Fecha com a tecla ESC
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") fecharModal();
+});
