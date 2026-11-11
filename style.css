@@ -326,3 +326,139 @@ ul, ol { list-style: none; }
   html { scroll-behavior: auto; }
   * { transition: none !important; }
 }
+/* ============ SOBRE A EMPRESA (JANELA) ============ */
+.modal-sobre {
+  --mvv-vermelho: #c8102e;
+  --mvv-cinza: #3a3a3c;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.modal-sobre.aberto {
+  display: flex;
+}
+
+.modal-caixa {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 40px 32px;
+  background: #fff;
+  border-radius: 12px;
+  animation: entrar 0.25s ease;
+}
+
+.modal-fechar {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  border: none;
+  background: none;
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--mvv-cinza);
+  cursor: pointer;
+}
+
+.modal-fechar:hover {
+  color: var(--mvv-vermelho);
+}
+
+@keyframes entrar {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+body.modal-aberto {
+  overflow: hidden;
+}
+
+.mvv-titulo {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--mvv-cinza);
+  margin-bottom: 32px;
+}
+
+.mvv-titulo::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 4px;
+  margin: 12px auto 0;
+  background: var(--mvv-vermelho);
+  border-radius: 2px;
+}
+
+.mvv-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.mvv-card {
+  padding: 28px;
+  background: #f7f7f7;
+  border-left: 5px solid var(--mvv-vermelho);
+  border-radius: 8px;
+}
+
+.mvv-card h3 {
+  color: var(--mvv-vermelho);
+  margin-bottom: 10px;
+}
+
+.mvv-card p,
+.valor p {
+  color: #555;
+  line-height: 1.6;
+}
+
+.mvv-sub {
+  text-align: center;
+  margin: 48px 0 24px;
+  color: var(--mvv-cinza);
+  font-size: 1.4rem;
+}
+
+.mvv-valores {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.valor {
+  padding: 22px;
+  border: 1px solid #e5e5e5;
+  border-top: 4px solid var(--mvv-cinza);
+  border-radius: 8px;
+  transition: transform 0.2s, border-top-color 0.2s;
+}
+
+.valor:hover {
+  transform: translateY(-4px);
+  border-top-color: var(--mvv-vermelho);
+}
+
+.valor h4 {
+  color: var(--mvv-cinza);
+  margin-bottom: 8px;
+}
+
+@media (max-width: 900px) {
+  .mvv-valores { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .mvv-grid,
+  .mvv-valores { grid-template-columns: 1fr; }
+  .modal-caixa { padding: 32px 20px; }
+}
